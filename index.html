@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Akku's Exclusive Moments</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --bg:#0D0D0D;
+    --card:#151116;
+    --pink:#FF2A85;
+    --pink2:#FF4B9B;
+    --pink-dark:#C9005F;
+    --white:#FFFFFF;
+    --muted:#A7A1A8;
+    --line:rgba(255,255,255,.09);
+    --glass:rgba(255,255,255,.055);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            rgba(255,42,133,.18),
+            transparent 42%
+        ),
+        radial-gradient(
+            circle at 0% 50%,
+            rgba(255,42,133,.06),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 100% 80%,
+            rgba(255,42,133,.08),
+            transparent 35%
+        ),
+        #0D0D0D;
+
+    color:#fff;
+    font-family:'DM Sans',sans-serif;
+    overflow-x:hidden;
+}
+
+/* ================================
+   BACKGROUND
+================================ */
+
+.bg{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:0;
+}
+
+.glow{
+    position:absolute;
+    width:280px;
+    height:280px;
+    border-radius:50%;
+    background:rgba(255,42,133,.08);
+    filter:blur(90px);
+}
+
+.glow.one{
+    top:5%;
+    left:-100px;
+}
+
+.glow.two{
+    bottom:5%;
+    right:-100px;
+}
+
+.particle{
+    position:absolute;
+    color:rgba(255,42,133,.18);
+    font-size:16px;
+    animation:floatParticle linear infinite;
+    filter:blur(.2px) drop-shadow(0 0 10px rgba(255,42,133,.4));
+}
+
+.p1{left:8%;animation-duration:12s;animation-delay:-2s;}
+.p2{left:23%;animation-duration:16s;animation-delay:-8s;}
+.p3{left:47%;animation-duration:14s;animation-delay:-5s;}
+.p4{left:69%;animation-duration:18s;animation-delay:-10s;}
+.p5{left:88%;animation-duration:13s;animation-delay:-3s;}
+
+@keyframes floatParticle{
+
+    0%{
+        transform:translateY(110vh) scale(.5) rotate(0);
+        opacity:0;
+    }
+
+    15%{
+        opacity:.8;
+    }
+
+    80%{
+        opacity:.7;
+    }
+
+    100%{
+        transform:translateY(-15vh) scale(1.2) rotate(180deg);
+        opacity:0;
+    }
+}
+
+/* ================================
+   MAIN
+================================ */
+
+.page{
+    width:100%;
+    max-width:520px;
+    margin:auto;
+    padding:18px 15px 45px;
+    position:relative;
+    z-index:2;
+}
+
+/* ================================
+   TOP BAR
+================================ */
+
+.topbar{
+    height:58px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 5px;
+    margin-bottom:14px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:11px;
+}
+
+.brand-icon{
+    width:39px;
+    height:39px;
+    border-radius:13px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,42,133,.25),
+            rgba(255,42,133,.05)
+        );
+
+    border:1px solid rgba(255,42,133,.25);
+
+    box-shadow:
+        0 0 25px rgba(255,42,133,.12),
+        inset 0 0 20px rgba(255,42,133,.05);
+}
+
+.brand-icon svg{
+    width:22px;
+    height:22px;
+    stroke:var(--pink);
+}
+
+.brand-name{
+    font-size:15px;
+    font-weight:700;
+    letter-spacing:-.3px;
+}
+
+.brand-sub{
+    display:block;
+    color:#77727A;
+    font-size:9px;
+    margin-top:1px;
+    letter-spacing:.7px;
+    text-transform:uppercase;
+}
+
+.menu{
+    width:42px;
+    height:42px;
+    border-radius:14px;
+    background:rgba(255,255,255,.045);
+    border:1px solid var(--line);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.menu span{
+    width:17px;
+    height:2px;
+    background:#fff;
+    display:block;
+    position:relative;
+    border-radius:10px;
+}
+
+.menu span:before,
+.menu span:after{
+    content:"";
+    position:absolute;
+    width:17px;
+    height:2px;
+    background:#fff;
+    left:0;
+    border-radius:10px;
+}
+
+.menu span:before{
+    top:-6px;
+}
+
+.menu span:after{
+    top:6px;
+}
+
+/* ================================
+   HERO
+================================ */
+
+.hero{
+    position:relative;
+    height:560px;
+    border-radius:30px;
+    overflow:hidden;
+
+    background:#151116;
+
+    box-shadow:
+        0 35px 80px rgba(0,0,0,.65),
+        0 0 55px rgba(255,42,133,.07);
+}
+
+.hero img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    transform:scale(1.015);
+}
+
+.hero:after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,.08) 15%,
+            rgba(0,0,0,.15) 35%,
+            rgba(0,0,0,.70) 72%,
+            rgba(13,13,13,.98) 100%
+        );
+}
+
+.hero-content{
+    position:absolute;
+    z-index:2;
+    left:25px;
+    right:25px;
+    bottom:27px;
+}
+
+.eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:1.7px;
+    text-transform:uppercase;
+
+    color:#FFB2D1;
+    margin-bottom:13px;
+}
+
+.eyebrow:before{
+    content:"";
+    width:24px;
+    height:1px;
+    background:var(--pink);
+    box-shadow:0 0 10px var(--pink);
+}
+
+.hero h1{
+    font-family:'Playfair Display',serif;
+    font-size:43px;
+    line-height:.98;
+    font-weight:600;
+    letter-spacing:-1.5px;
+    max-width:390px;
+}
+
+.hero h1 span{
+    color:var(--pink);
+    text-shadow:
+        0 0 20px rgba(255,42,133,.45);
+}
+
+.hero p{
+    color:#D0CBD0;
+    font-size:13px;
+    line-height:1.65;
+    margin-top:15px;
+    max-width:390px;
+}
+
+/* ================================
+   CTA
+================================ */
+
+.primary-btn{
+    margin-top:20px;
+
+    width:100%;
+    min-height:54px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    border-radius:17px;
+
+    color:#fff;
+    text-decoration:none;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FF2A85,
+            #E60065
+        );
+
+    font-size:14px;
+    font-weight:700;
+
+    box-shadow:
+        0 12px 35px rgba(255,42,133,.35),
+        inset 0 1px rgba(255,255,255,.25);
+
+    transition:.35s ease;
+}
+
+.primary-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:
+        0 17px 45px rgba(255,42,133,.5);
+}
+
+.primary-btn svg{
+    width:18px;
+    height:18px;
+}
+
+/* ================================
+   QUICK FEATURES
+================================ */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:9px;
+    margin:13px 0 35px;
+}
+
+.feature{
+    padding:15px 8px;
+    text-align:center;
+
+    border-radius:17px;
+
+    background:rgba(255,255,255,.035);
+    border:1px solid rgba(255,255,255,.07);
+
+    backdrop-filter:blur(15px);
+}
+
+.feature-icon{
+    width:34px;
+    height:34px;
+    margin:0 auto 8px;
+
+    border-radius:11px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(255,42,133,.09);
+}
+
+.feature svg{
+    width:17px;
+    height:17px;
+    stroke:var(--pink);
+}
+
+.feature strong{
+    display:block;
+    font-size:10px;
+    font-weight:700;
+}
+
+.feature small{
+    display:block;
+    color:#77727A;
+    font-size:8px;
+    margin-top:3px;
+}
+
+/* ================================
+   SECTION HEADER
+================================ */
+
+.section-head{
+    display:flex;
+    align-items:end;
+    justify-content:space-between;
+    margin-bottom:14px;
+}
+
+.section-title{
+    font-family:'Playfair Display',serif;
+    font-size:26px;
+    font-weight:600;
+}
+
+.section-title span{
+    color:var(--pink);
+}
+
+.section-sub{
+    color:#77727A;
+    font-size:10px;
+}
+
+/* ================================
+   PHOTO CARD
+================================ */
+
+.photo-card{
+    position:relative;
+    overflow:hidden;
+
+    margin-bottom:15px;
+
+    border-radius:23px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.07),
+            rgba(255,255,255,.025)
+        );
+
+    border:1px solid rgba(255,255,255,.07);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.48);
+
+    transition:.4s ease;
+}
+
+.photo-card:hover{
+    transform:translateY(-4px);
+    box-shadow:
+        0 25px 55px rgba(0,0,0,.6),
+        0 0 25px rgba(255,42,133,.08);
+}
+
+.photo-wrap{
+    position:relative;
+    height:310px;
+    overflow:hidden;
+}
+
+.photo-wrap img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:.6s ease;
+}
+
+.photo-card:hover img{
+    transform:scale(1.04);
+}
+
+.photo-wrap:after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent 50%,
+            rgba(0,0,0,.65)
+        );
+}
+
+.photo-info{
+    padding:15px 16px 17px;
+}
+
+.photo-label{
+    color:var(--pink);
+    font-size:9px;
+    font-weight:700;
+    letter-spacing:1.4px;
+    text-transform:uppercase;
+    margin-bottom:5px;
+}
+
+.photo-caption{
+    color:#E7E3E6;
+    font-size:13px;
+    line-height:1.45;
+}
+
+/* ================================
+   VIDEO SECTION
+================================ */
+
+.video-section{
+    margin-top:35px;
+}
+
+.video-card{
+    position:relative;
+    min-height:430px;
+
+    overflow:hidden;
+    border-radius:25px;
+
+    background:#090909;
+
+    border:1px solid rgba(255,42,133,.14);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.65),
+        0 0 40px rgba(255,42,133,.08);
+}
+
+.video-bg{
+    position:absolute;
+    inset:-30px;
+
+    width:calc(100% + 60px);
+    height:calc(100% + 60px);
+
+    object-fit:cover;
+
+    filter:
+        blur(25px)
+        brightness(.42)
+        saturate(.75);
+
+    transform:scale(1.15);
+
+    animation:videoGlow 7s ease-in-out infinite alternate;
+}
+
+@keyframes videoGlow{
+
+    from{
+        transform:scale(1.12);
+        filter:blur(24px) brightness(.38) saturate(.7);
+    }
+
+    to{
+        transform:scale(1.23);
+        filter:blur(30px) brightness(.5) saturate(.9);
+    }
+}
+
+.video-card:after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,42,133,.08),
+            transparent 42%
+        ),
+        rgba(5,5,7,.48);
+}
+
+.video-content{
+    position:relative;
+    z-index:2;
+
+    min-height:430px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:25px;
+}
+
+/* SHIELD */
+
+.shield{
+    width:72px;
+    height:72px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,42,133,.18),
+            rgba(255,255,255,.04)
+        );
+
+    border:1px solid rgba(255,42,133,.28);
+
+    box-shadow:
+        0 0 35px rgba(255,42,133,.2),
+        inset 0 0 25px rgba(255,42,133,.08);
+
+    margin-bottom:18px;
+}
+
+.shield svg{
+    width:38px;
+    height:38px;
+
+    fill:none;
+    stroke:#FF77AE;
+    stroke-width:1.5;
+
+    filter:
+        drop-shadow(
+            0 0 9px rgba(255,42,133,.65)
+        );
+}
+
+.video-kicker{
+    font-size:9px;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:#FF8FBB;
+    margin-bottom:8px;
+}
+
+.video-title{
+    font-family:'Playfair Display',serif;
+    font-size:29px;
+    font-weight:600;
+}
+
+.video-desc{
+    color:#B9B3BA;
+    font-size:12px;
+    line-height:1.6;
+    max-width:300px;
+    margin-top:9px;
+}
+
+.download-btn{
+    width:100%;
+    max-width:300px;
+
+    min-height:55px;
+
+    margin-top:22px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    border-radius:17px;
+
+    text-decoration:none;
+    color:#fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FF2A85,
+            #D90061
+        );
+
+    font-size:14px;
+    font-weight:700;
+
+    box-shadow:
+        0 12px 35px rgba(255,42,133,.4);
+
+    transition:.35s ease;
+}
+
+.download-btn:hover{
+    transform:translateY(-3px) scale(1.015);
+
+    box-shadow:
+        0 17px 45px rgba(255,42,133,.58);
+}
+
+.download-btn svg{
+    width:19px;
+    height:19px;
+}
+
+.payment-note{
+    color:#77727A;
+    font-size:9px;
+    margin-top:12px;
+}
+
+/* ================================
+   BENEFITS
+================================ */
+
+.benefits{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+    margin-top:15px;
+}
+
+.benefit{
+    padding:15px;
+
+    border-radius:17px;
+
+    background:rgba(255,255,255,.035);
+    border:1px solid rgba(255,255,255,.06);
+}
+
+.benefit svg{
+    width:17px;
+    height:17px;
+    stroke:var(--pink);
+    margin-bottom:8px;
+}
+
+.benefit strong{
+    display:block;
+    font-size:10px;
+}
+
+.benefit span{
+    display:block;
+    color:#77727A;
+    font-size:9px;
+    margin-top:3px;
+}
+
+/* ================================
+   INSTAGRAM
+================================ */
+
+.social{
+    margin-top:38px;
+
+    padding:24px 18px;
+
+    border-radius:24px;
+
+    text-align:center;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,42,133,.08),
+            rgba(255,255,255,.025)
+        );
+
+    border:1px solid rgba(255,255,255,.07);
+}
+
+.social-kicker{
+    color:#FF80B4;
+    font-size:9px;
+    letter-spacing:1.8px;
+    text-transform:uppercase;
+    font-weight:700;
+}
+
+.social h2{
+    font-family:'Playfair Display',serif;
+    font-size:24px;
+    margin-top:5px;
+}
+
+.social p{
+    color:#858087;
+    font-size:11px;
+    margin-top:5px;
+}
+
+.instagram-btn{
+    margin:18px auto 0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    width:100%;
+    min-height:50px;
+
+    border-radius:16px;
+
+    text-decoration:none;
+    color:#fff;
+
+    background:
+        linear-gradient(
+            100deg,
+            #F58529,
+            #DD2A7B,
+            #8134AF
+        );
+
+    font-size:13px;
+    font-weight:700;
+
+    box-shadow:
+        0 12px 30px rgba(221,42,123,.22);
+
+    transition:.35s ease;
+}
+
+.instagram-btn:hover{
+    transform:translateY(-3px);
+}
+
+.instagram-btn svg{
+    width:20px;
+    height:20px;
+    fill:none;
+    stroke:#fff;
+    stroke-width:1.8;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+.footer{
+    text-align:center;
+    padding:25px 0 5px;
+}
+
+.footer-line{
+    width:35px;
+    height:1px;
+    background:rgba(255,42,133,.5);
+    margin:0 auto 13px;
+}
+
+.footer p{
+    color:#5F5A61;
+    font-size:9px;
+    letter-spacing:.5px;
+}
+
+.footer span{
+    color:#FF4B9B;
+}
+
+/* ================================
+   REVEAL ANIMATION
+================================ */
+
+.reveal{
+    opacity:0;
+    transform:translateY(25px);
+    animation:reveal .8s ease forwards;
+}
+
+.delay1{animation-delay:.12s;}
+.delay2{animation-delay:.22s;}
+.delay3{animation-delay:.32s;}
+.delay4{animation-delay:.42s;}
+
+@keyframes reveal{
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media(max-width:390px){
+
+    .page{
+        padding-left:11px;
+        padding-right:11px;
+    }
+
+    .hero{
+        height:530px;
+        border-radius:25px;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .photo-wrap{
+        height:280px;
+    }
+
+    .video-card,
+    .video-content{
+        min-height:410px;
+    }
+}
+
+/* ================================
+   DESKTOP
+================================ */
+
+@media(min-width:700px){
+
+    body{
+        padding:30px 0;
+    }
+
+    .page{
+        max-width:560px;
+    }
+
+    .hero{
+        height:650px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- BACKGROUND -->
+<div class="bg">
+
+    <div class="glow one"></div>
+    <div class="glow two"></div>
+
+    <div class="particle p1">♡</div>
+    <div class="particle p2">♥</div>
+    <div class="particle p3">✦</div>
+    <div class="particle p4">♡</div>
+    <div class="particle p5">♥</div>
+
+</div>
+
+
+<main class="page">
+
+    <!-- TOP BAR -->
+    <header class="topbar reveal">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+
+                <svg viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="1.7">
+
+                    <path d="
+                        M20.8 4.6
+                        C19.2 2.8 16.2 2.4 14.3 4.1
+                        L12 6.2
+                        L9.7 4.1
+                        C7.8 2.4 4.8 2.8 3.2 4.6
+                        C1.3 6.8 1.6 10.1 3.6 12.1
+                        L12 20
+                        L20.4 12.1
+                        C22.4 10.1 22.7 6.8 20.8 4.6Z"/>
+
+                </svg>
+
+            </div>
+
+            <div>
+                <div class="brand-name">
+                    Akku's Moments
+                </div>
+
+                <span class="brand-sub">
+                    Private Memory Collection
+                </span>
+            </div>
+
+        </div>
+
+        <div class="menu">
+            <span></span>
+        </div>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero reveal delay1">
+
+        <img
+            src="https://i.imgur.com/coJv7ME.jpeg"
+            alt="Akku's Exclusive Moments"
+        >
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                A PRIVATE SPACE FOR US
+            </div>
+
+            <h1>
+                Our Beautiful
+                <span>Moments</span>
+            </h1>
+
+            <p>
+                ഞങ്ങളുടെ ഏറ്റവും പ്രിയപ്പെട്ട നിമിഷങ്ങളും
+                പ്രത്യേക വീഡിയോകളും ഇവിടെ കാണാം.
+            </p>
+
+            <a href="#memories" class="primary-btn">
+
+                Explore Our Memories
+
+                <svg viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="2">
+
+                    <path d="M5 12h14"/>
+                    <path d="m13 6 6 6-6 6"/>
+
+                </svg>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+    <section class="features reveal delay2">
+
+        <div class="feature">
+
+            <div class="feature-icon">
+
+                <svg viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="1.8">
+
+                    <rect x="3" y="4" width="18" height="16" rx="3"/>
+                    <circle cx="8.5" cy="9" r="1.5"/>
+                    <path d="m21 15-4.5-4.5L8 19"/>
+
+                </svg>
+
+            </div>
+
+            <strong>Photos</strong>
+            <small>Our memories</small>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+
+                <svg viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="1.8">
+
+                    <circle cx="12" cy="12" r="9"/>
+                    <path d="m10 8 6 4-6 4V8Z"/>
+
+                </svg>
+
+            </div>
+
+            <strong>Videos</strong>
+            <small>Private moments</small>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+
+                <svg viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="1.8">
+
+                    <path d="
+                        M20.8 4.6
+                        C19.2 2.8 16.2 2.4 14.3 4.1
+                        L12 6.2
+                        L9.7 4.1
+                        C7.8 2.4 4.8 2.8 3.2 4.6
+                        C1.3 6.8 1.6 10.1 3.6 12.1
+                        L12 20
+                        L20.4 12.1
+                        C22.4 10.1 22.7 6.8 20.8 4.6Z"/>
+
+                </svg>
+
+            </div>
+
+            <strong>Special</strong>
+            <small>Just for us</small>
+
+        </div>
+
+    </section>
+
+
+    <!-- MEMORIES -->
+    <section id="memories" class="reveal delay3">
+
+        <div class="section-head">
+
+            <div>
+                <div class="section-sub">
+                    OUR COLLECTION
+                </div>
+
+                <h2 class="section-title">
+                    Favorite <span>Moments</span>
+                </h2>
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 1 -->
+        <article class="photo-card">
+
+            <div class="photo-wrap">
+
+                <img
+                    src="https://i.imgur.com/coJv7ME.jpeg"
+                    alt="Beautiful moment"
+                    loading="lazy"
+                >
+
+            </div>
+
+            <div class="photo-info">
+
+                <div class="photo-label">
+                    MEMORY 01
+                </div>
+
+                <div class="photo-caption">
+                    ഞങ്ങളുടെ മനോഹരമായ ചില നിമിഷങ്ങൾ
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PHOTO 2 -->
+        <article class="photo-card">
+
+            <div class="photo-wrap">
+
+                <img
+                    src="https://i.imgur.com/5NpgyBV.png"
+                    alt="Special moment"
+                    loading="lazy"
+                >
+
+            </div>
+
+            <div class="photo-info">
+
+                <div class="photo-label">
+                    MEMORY 02
+                </div>
+
+                <div class="photo-caption">
+                    ഒന്നിച്ച് ചെലവഴിച്ച നിമിഷങ്ങൾ
+                </div>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- PRIVATE VIDEO -->
+    <section class="video-section reveal delay4">
+
+        <div class="section-head">
+
+            <div>
+
+                <div class="section-sub">
+                    PRIVATE CONTENT
+                </div>
+
+                <h2 class="section-title">
+                    Special <span>Video</span>
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="video-card">
+
+            <!-- BLURRED VIDEO -->
+            <video
+                class="video-bg"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata">
+
+                <source
+                    src="sample.mp4"
+                    type="video/mp4">
+
+            </video>
+
+
+            <div class="video-content">
+
+                <!-- SHIELD LOCK -->
+                <div class="shield">
+
+                    <svg viewBox="0 0 48 48">
+
+                        <path
+                            d="M24 4
+                               L40 10
+                               V22
+                               C40 32
+                               33 40
+                               24 44
+                               C15 40
+                               8 32
+                               8 22
+                               V10
+                               Z"/>
+
+                        <rect
+                            x="17"
+                            y="20"
+                            width="14"
+                            height="12"
+                            rx="2"/>
+
+                        <path
+                            d="M20 20
+                               V16
+                               C20 13.8 21.8 12 24 12
+                               C26.2 12 28 13.8 28 16
+                               V20"/>
+
+                    </svg>
+
+                </div>
+
+
+                <div class="video-kicker">
+                    PRIVATE & SECURE
+                </div>
+
+
+                <h3 class="video-title">
+                    This Video is Locked
+                </h3>
+
+
+                <p class="video-desc">
+                    Get instant access to our exclusive
+                    private video collection.
+                </p>
+
+
+                <!-- SAME PAYMENT LINK -->
+                <a
+                    href="https://rzp.io/rzp/m8g1EvqK"
+                    class="download-btn">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+
+                        <path d="M12 3v12"/>
+                        <path d="m7 10 5 5 5-5"/>
+                        <path d="M5 21h14"/>
+
+                    </svg>
+
+                    Download Video
+
+                </a>
+
+
+                <div class="payment-note">
+                    പേയ്‌മെന്റിന് ശേഷം മുഴുവൻ വീഡിയോ ലഭിക്കുന്നതാണ്
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BENEFITS -->
+        <div class="benefits">
+
+            <div class="benefit">
+
+                <svg viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="1.8">
+
+                    <path d="M12 3 20 6v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3Z"/>
+                    <path d="m9 12 2 2 4-4"/>
+
+                </svg>
+
+                <strong>100% Private</strong>
+                <span>Secure access</span>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <svg viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="1.8">
+
+                    <path d="M6 4h12v16H6z"/>
+                    <path d="M9 8h6"/>
+                    <path d="M9 12h6"/>
+                    <path d="M9 16h4"/>
+
+                </svg>
+
+                <strong>Premium Quality</strong>
+                <span>HD content</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- INSTAGRAM -->
+    <section class="social reveal">
+
+        <div class="social-kicker">
+            FOLLOW OUR JOURNEY
+        </div>
+
+        <h2>
+            Stay Connected
+        </h2>
+
+        <p>
+            കൂടുതൽ updates & moments Instagram-ൽ.
+        </p>
+
+
+        <!-- SAME INSTAGRAM LINK -->
+        <a
+            href="https://www.instagram.com/the_aswi.nnn"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="instagram-btn">
+
+            <svg
+                viewBox="0 0 24 24">
+
+                <rect
+                    x="3"
+                    y="3"
+                    width="18"
+                    height="18"
+                    rx="5"/>
+
+                <circle
+                    cx="12"
+                    cy="12"
+                    r="4"/>
+
+                <circle
+                    cx="17.5"
+                    cy="6.5"
+                    r="1"/>
+
+            </svg>
+
+            Follow on Instagram
+
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-line"></div>
+
+        <p>
+            Made with <span>♥</span> for beautiful memories
+        </p>
+
+    </footer>
+
+</main>
+
+
+</body>
+</html>
