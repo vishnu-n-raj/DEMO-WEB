@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f7f9fc" />
+  <title>LiquidCraft AI — Shopify Code Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --blue:#2563eb; --ink:#111827; --muted:#667085; --line:#e6eaf0; --surface:#fff; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#f7f9fc; color:var(--ink); font-family:"DM Sans",sans-serif; }
+    .topbar { height:72px; border-bottom:1px solid var(--line); background:rgba(255,255,255,.88); display:flex; align-items:center; justify-content:space-between; padding:0 clamp(18px,5vw,72px); }
+    .brand { display:flex; align-items:center; gap:11px; font:700 19px "Space Grotesk",sans-serif; letter-spacing:-.5px; }
+    .logo { display:grid; place-items:center; width:36px; height:36px; border-radius:11px; color:#fff; background:linear-gradient(135deg,#2563eb,#38bdf8); box-shadow:0 5px 14px #2563eb35; }
+    .badge { font-size:12px; font-weight:700; color:#1d4ed8; background:#eff6ff; border:1px solid #dbeafe; border-radius:99px; padding:7px 11px; }
+    main { max-width:1050px; margin:0 auto; padding:55px 20px 70px; }
+    .hero { text-align:center; margin-bottom:34px; }
+    .eyebrow { display:inline-flex; gap:7px; align-items:center; color:#2563eb; background:#eff6ff; border:1px solid #dbeafe; border-radius:99px; padding:7px 12px; font-size:12px; font-weight:700; }
+    h1 { font:700 clamp(32px,5vw,49px)/1.12 "Space Grotesk",sans-serif; letter-spacing:-1.8px; margin:18px 0 13px; }
+    h1 span { color:var(--blue); }
+    .sub { max-width:620px; margin:0 auto; color:var(--muted); font-size:16px; line-height:1.7; }
+    .panel { background:var(--surface); border:1px solid var(--line); border-radius:20px; box-shadow:0 14px 45px #0f172a08; overflow:hidden; }
+    .panel-head { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:19px 22px; border-bottom:1px solid var(--line); }
+    .panel-title { font-weight:700; font-size:15px; }
+    .panel-caption { color:var(--muted); font-size:12px; margin-top:4px; }
+    .dot { width:8px; height:8px; border-radius:50%; background:#22c55e; display:inline-block; margin-right:6px; }
+    .input-wrap { padding:22px; }
+    textarea { width:100%; min-height:150px; resize:vertical; border:1px solid #dce2ea; border-radius:13px; padding:16px; font:14px/1.7 "DM Sans",sans-serif; color:var(--ink); outline:none; transition:.2s; }
+    textarea:focus { border-color:#7aa2ff; box-shadow:0 0 0 4px #2563eb12; }
+    .examples { display:flex; flex-wrap:wrap; gap:8px; margin:13px 0 20px; }
+    .example { border:1px solid #e2e8f0; background:#fff; color:#475467; border-radius:9px; padding:8px 11px; font-size:12px; cursor:pointer; transition:.2s; }
+    .example:hover { border-color:#93b4ff; color:#1d4ed8; background:#f8fbff; }
+    .actions { display:flex; align-items:center; justify-content:space-between; gap:14px; }
+    .hint { color:#98a2b3; font-size:12px; }
+    button { font-family:inherit; }
+    .generate { border:0; border-radius:11px; background:var(--blue); color:#fff; font-size:14px; font-weight:700; padding:13px 19px; display:flex; gap:9px; align-items:center; cursor:pointer; box-shadow:0 5px 13px #2563eb2e; transition:transform .2s, background .2s; }
+    .generate:hover { background:#1d4ed8; transform:translateY(-1px); }
+    .generate:disabled { opacity:.65; cursor:wait; transform:none; }
+    .output { margin-top:22px; display:none; }
+    .output.visible { display:block; }
+    .output-head { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:15px 18px; background:#111827; color:#e5e7eb; }
+    .file-label { display:flex; align-items:center; gap:9px; font-size:13px; font-weight:600; }
+    .file-icon { display:grid; place-items:center; width:28px; height:28px; background:#273449; border-radius:7px; color:#93c5fd; font-size:11px; font-weight:700; }
+    .copy { border:1px solid #475569; background:#1f2937; color:#fff; padding:9px 12px; border-radius:8px; cursor:pointer; font-size:12px; font-weight:700; }
+    .copy:hover { background:#374151; }
+    pre { margin:0; padding:21px; background:#0b1220; color:#dbeafe; overflow:auto; max-height:520px; font:12.5px/1.75 ui-monospace,SFMono-Regular,Menlo,monospace; white-space:pre; tab-size:2; }
+    .error { display:none; margin-top:14px; border:1px solid #fecaca; background:#fef2f2; color:#b91c1c; padding:12px 14px; border-radius:10px; font-size:13px; line-height:1.5; }
+    .error.visible { display:block; }
+    .footnote { text-align:center; margin-top:22px; color:#98a2b3; font-size:12px; line-height:1.7; }
+    .spinner { width:15px; height:15px; border:2px solid #ffffff70; border-top-color:#fff; border-radius:50%; animation:spin .7s linear infinite; }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    @media(max-width:600px) { .topbar { height:64px; } main { padding-top:38px; } .badge { display:none; } .panel-head,.input-wrap { padding:16px; } .actions { align-items:stretch; flex-direction:column; } .generate { justify-content:center; } .hint { text-align:center; } .output-head { padding:12px; } pre { padding:15px; font-size:11.5px; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="logo">⌘</span> LiquidCraft AI</div>
+    <div class="badge">✦ AI-powered Shopify developer</div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="eyebrow">✦ YOUR IDEA → SHOPIFY CODE</div>
+      <h1>Build Shopify features<br><span>with a simple prompt.</span></h1>
+      <p class="sub">Describe the section, feature, or store customization you need. Get Shopify Liquid code generated by AI, ready to review and add to your theme.</p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <div><div class="panel-title">What do you want to build?</div><div class="panel-caption">Be specific about how it should look and work.</div></div>
+        <div style="font-size:12px;color:#667085;white-space:nowrap"><span class="dot"></span>Ready</div>
+      </div>
+      <div class="input-wrap">
+        <textarea id="prompt" maxlength="6000" placeholder="Example: Create a responsive product page Add to Cart button with a blue glowing border, hover animation, and customizable colors in the Shopify theme editor..."></textarea>
+        <div class="examples">
+          <button class="example" data-prompt="Create a Shopify product page low-stock alert that displays when inventory is 5 or fewer. Make it responsive and accessible.">⚡ Low stock alert</button>
+          <button class="example" data-prompt="Create a responsive collection cards section with round collection images, titles, and customizable settings in the Shopify theme editor.">▦ Collection circles</button>
+          <button class="example" data-prompt="Create a sticky mobile bottom bar with Buy Now and Add to Cart buttons for a Shopify product page.">▣ Sticky mobile bar</button>
+          <button class="example" data-prompt="Create a product delivery estimate box with a truck icon and customizable delivery text for a Shopify product page.">♧ Delivery estimate</button>
+        </div>
+        <div class="actions">
+          <span class="hint">Tip: Mention layout, colors, behavior, and mobile requirements.</span>
+          <button id="generate" class="generate"><span id="buttonIcon">✦</span><span id="buttonText">Generate Liquid Code</span></button>
+        </div>
+        <div id="error" class="error" role="alert"></div>
+      </div>
+    </section>
+
+    <section id="output" class="panel output" aria-live="polite">
+      <div class="output-head">
+        <div class="file-label"><span class="file-icon">LIQ</span><span>Generated Shopify code<br><span style="font-weight:400;color:#9ca3af;font-size:11px">Liquid / HTML / CSS / JavaScript</span></span></div>
+        <button id="copy" class="copy">▢ Copy code</button>
+      </div>
+      <pre><code id="code"></code></pre>
+    </section>
+    <p class="footnote">Always review generated code and test it on a duplicate or development theme before publishing.<br>LiquidCraft AI is an independent tool and is not affiliated with Shopify.</p>
+  </main>
+
+  <script>
+    const promptEl = document.getElementById("prompt");
+    const generateBtn = document.getElementById("generate");
+    const buttonText = document.getElementById("buttonText");
+    const buttonIcon = document.getElementById("buttonIcon");
+    const output = document.getElementById("output");
+    const codeEl = document.getElementById("code");
+    const errorEl = document.getElementById("error");
+    const copyBtn = document.getElementById("copy");
+
+    document.querySelectorAll(".example").forEach(btn => {
+      btn.addEventListener("click", () => {
+        promptEl.value = btn.dataset.prompt;
+        promptEl.focus();
+      });
+    });
+
+    generateBtn.addEventListener("click", async () => {
+      const prompt = promptEl.value.trim();
+      errorEl.classList.remove("visible");
+      errorEl.textContent = "";
+      if (!prompt) {
+        errorEl.textContent = "Please describe the Shopify feature you want to generate.";
+        errorEl.classList.add("visible");
+        promptEl.focus();
+        return;
+      }
+      generateBtn.disabled = true;
+      buttonIcon.innerHTML = '<span class="spinner"></span>';
+      buttonText.textContent = "Generating code…";
+      try {
+        const response = await fetch("/api/generate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ prompt })
+        });
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.error || "Could not generate code.");
+        codeEl.textContent = data.code;
+        output.classList.add("visible");
+        copyBtn.textContent = "▢ Copy code";
+        output.scrollIntoView({ behavior: "smooth", block: "start" });
+      } catch (err) {
+        errorEl.textContent = err.message || "Something went wrong. Please try again.";
+        errorEl.classList.add("visible");
+      } finally {
+        generateBtn.disabled = false;
+        buttonIcon.textContent = "✦";
+        buttonText.textContent = "Generate Liquid Code";
+      }
+    });
+
+    copyBtn.addEventListener("click", async () => {
+      const code = codeEl.textContent;
+      try {
+        await navigator.clipboard.writeText(code);
+        copyBtn.textContent = "✓ Copied!";
+      } catch {
+        const range = document.createRange();
+        range.selectNodeContents(codeEl);
+        const selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        copyBtn.textContent = "Select code to copy";
+      }
+      setTimeout(() => copyBtn.textContent = "▢ Copy code", 1800);
+    });
+  </script>
+</body>
+</html>
