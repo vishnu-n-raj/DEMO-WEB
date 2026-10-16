@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ലൊട്ടുലൊടുക്ക് | Premium Joke</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --green-1: #021c12;
+      --green-2: #063b25;
+      --green-3: #087443;
+      --green-light: #12a35f;
+      --gold: #d8b66a;
+      --gold-light: #f5df9b;
+      --white: #ffffff;
+      --muted: #9db5a8;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 22px;
+
+      font-family: "DM Sans", sans-serif;
+      color: var(--white);
+
+      background:
+        radial-gradient(circle at 15% 10%, rgba(18,163,95,.20), transparent 30%),
+        radial-gradient(circle at 90% 85%, rgba(216,182,106,.12), transparent 28%),
+        linear-gradient(145deg, #010b07, var(--green-1), #031f14);
+    }
+
+    /* Background decoration */
+
+    body::before {
+      content: "₹";
+      position: fixed;
+      top: -60px;
+      left: -20px;
+      font-size: 260px;
+      font-weight: 800;
+      color: rgba(255,255,255,.018);
+      pointer-events: none;
+    }
+
+    body::after {
+      content: "₹";
+      position: fixed;
+      right: -30px;
+      bottom: -90px;
+      font-size: 300px;
+      font-weight: 800;
+      color: rgba(216,182,106,.025);
+      pointer-events: none;
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: 470px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+
+      padding: 34px 28px 28px;
+
+      border: 1px solid rgba(216,182,106,.22);
+      border-radius: 30px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(9,67,42,.88),
+          rgba(2,27,18,.94)
+        );
+
+      backdrop-filter: blur(22px);
+
+      box-shadow:
+        0 35px 90px rgba(0,0,0,.55),
+        inset 0 1px 0 rgba(255,255,255,.06);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      top: -120px;
+      right: -80px;
+
+      background: rgba(18,163,95,.18);
+      filter: blur(50px);
+      border-radius: 50%;
+    }
+
+    /* Top badge */
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 8px 14px;
+      margin-bottom: 20px;
+
+      border: 1px solid rgba(216,182,106,.25);
+      border-radius: 50px;
+
+      background: rgba(216,182,106,.08);
+
+      color: var(--gold-light);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #36d98a;
+      box-shadow: 0 0 12px #36d98a;
+    }
+
+    /* Heading */
+
+    h1 {
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(30px, 8vw, 42px);
+      line-height: 1.15;
+
+      margin-bottom: 12px;
+
+      background: linear-gradient(
+        135deg,
+        #ffffff 15%,
+        var(--gold-light) 55%,
+        #ffffff 90%
+      );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
+
+    /* Price */
+
+    .price-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 15px 17px;
+      margin-bottom: 18px;
+
+      border-radius: 18px;
+      border: 1px solid rgba(216,182,106,.16);
+
+      background: rgba(0,0,0,.20);
+    }
+
+    .price-label {
+      color: #91a99d;
+      font-size: 12px;
+    }
+
+    .price {
+      color: var(--gold-light);
+      font-size: 25px;
+      font-weight: 800;
+    }
+
+    /* Joke box */
+
+    .joke-box {
+      position: relative;
+      overflow: hidden;
+
+      min-height: 205px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 28px 22px;
+      margin-bottom: 20px;
+
+      border-radius: 22px;
+
+      border: 1px solid rgba(255,255,255,.08);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(0,0,0,.36),
+          rgba(0,0,0,.18)
+        );
+
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.04);
+    }
+
+    .joke-content {
+      width: 100%;
+      text-align: center;
+    }
+
+    .lock-circle {
+      width: 62px;
+      height: 62px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin: 0 auto 18px;
+
+      border-radius: 50%;
+
+      border: 1px solid rgba(216,182,106,.3);
+
+      background: rgba(216,182,106,.08);
+
+      color: var(--gold-light);
+      font-size: 25px;
+
+      box-shadow:
+        0 0 30px rgba(216,182,106,.08);
+    }
+
+    .locked-text {
+      color: #c5d4cd;
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+
+    .blur-text {
+      margin-top: 12px;
+
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.7;
+
+      filter: blur(7px);
+      user-select: none;
+      opacity: .65;
+    }
+
+    /* Button */
+
+    .pay-btn {
+      position: relative;
+      overflow: hidden;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      width: 100%;
+
+      padding: 17px 20px;
+
+      border-radius: 17px;
+
+      color: #082315;
+      background:
+        linear-gradient(
+          135deg,
+          #f4dc91,
+          #d1aa54
+        );
+
+      text-decoration: none;
+
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: .3px;
+
+      box-shadow:
+        0 12px 30px rgba(216,182,106,.20);
+
+      transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+    }
+
+    .pay-btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -120%;
+
+      width: 80%;
+      height: 100%;
+
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.5),
+        transparent
+      );
+
+      transform: skewX(-20deg);
+      transition: left .7s ease;
+    }
+
+    .pay-btn:hover::before {
+      left: 140%;
+    }
+
+    .pay-btn:hover {
+      transform: translateY(-3px) scale(1.01);
+
+      box-shadow:
+        0 18px 38px rgba(216,182,106,.28);
+    }
+
+    .pay-btn:active {
+      transform: scale(.98);
+    }
+
+    .arrow {
+      font-size: 18px;
+    }
+
+    /* Trust */
+
+    .trust {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+
+      margin-top: 17px;
+
+      color: #718b7d;
+      font-size: 11px;
+    }
+
+    .secure-icon {
+      color: #42c982;
+    }
+
+    .footer {
+      text-align: center;
+
+      margin-top: 20px;
+
+      color: #52695d;
+      font-size: 10px;
+      letter-spacing: .5px;
+    }
+
+    /* Mobile */
+
+    @media (max-width: 420px) {
+      body {
+        padding: 14px;
+      }
+
+      .card {
+        padding: 28px 19px 22px;
+        border-radius: 25px;
+      }
+
+      h1 {
+        font-size: 31px;
+      }
+
+      .joke-box {
+        min-height: 190px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="wrapper">
+
+    <section class="card">
+
+      <!-- Premium Badge -->
+      <div class="badge">
+        <span class="badge-dot"></span>
+        Premium Joke
+      </div>
+
+      <!-- Heading -->
+      <h1>ലൊട്ടുലൊടുക്ക്<br>ജോക്സ്</h1>
+
+      <p class="subtitle">
+        ഒരു ചെറിയ പേയ്‌മെന്റ് മാത്രം.
+        അതിന് ശേഷം ഇന്നത്തെ exclusive joke നിങ്ങളെ കാത്തിരിക്കുന്നു.
+      </p>
+
+      <!-- Price -->
+      <div class="price-box">
+        <div class="price-label">
+          Joke Unlock Pass
+        </div>
+
+        <div class="price">
+          ₹10
+        </div>
+      </div>
+
+      <!-- Locked Joke -->
+      <div class="joke-box">
+
+        <div class="joke-content">
+
+          <div class="lock-circle">
+            🔐
+          </div>
+
+          <p class="locked-text">
+            ഈ തമാശ ഇപ്പോൾ Locked ആണ്
+          </p>
+
+          <div class="blur-text">
+            ചോദ്യം: ലോകത്തിലെ ഏറ്റവും വലിയ അബദ്ധം എന്താണ്?
+            <br>
+            ഉത്തരം: ₹10 കൊടുത്ത് ഈ തമാശ വായിച്ചതാണ്! 😂
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Razorpay -->
+      <a
+        href="https://rzp.io/rzp/m8g1EvqK"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="pay-btn"
+      >
+        <span>₹10 നൽകി Joke Unlock ചെയ്യൂ</span>
+        <span class="arrow">→</span>
+      </a>
+
+      <!-- Trust -->
+      <div class="trust">
+        <span class="secure-icon">✓</span>
+        Secure payment powered by Razorpay
+      </div>
+
+      <div class="footer">
+        © 2026 • Premium Joke Station
+      </div>
+
+    </section>
+
+  </main>
+
+</body>
+</html>
