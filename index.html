@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #111111;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      position: relative;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 420px;
+    }
+
+    /* Form Card Styles */
+    .login-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 32px 24px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .title {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 24px;
+      color: #111827;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .input-field:focus {
+      border-color: #111827;
+    }
+
+    .form-options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 18px;
+      margin-bottom: 24px;
+      font-size: 14px;
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      color: #374151;
+      font-weight: 600;
+    }
+
+    .checkbox-label input {
+      width: 18px;
+      height: 18px;
+      accent-color: #000000;
+      cursor: pointer;
+    }
+
+    .forgot-link {
+      color: #6b7280;
+      text-decoration: none;
+    }
+
+    .forgot-link:hover {
+      text-decoration: underline;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #000000;
+      color: #ffffff;
+      border: none;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .submit-btn:hover {
+      background-color: #1f2937;
+    }
+
+    /* Loading Screen Styles */
+    .loader-screen {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .spinner {
+      width: 48px;
+      height: 48px;
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #000000;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Final Big Text Screen */
+    .success-screen {
+      display: none;
+      text-align: center;
+    }
+
+    .big-text {
+      font-size: 48px;
+      font-weight: 800;
+      color: #111827;
+      letter-spacing: -1px;
+      word-break: break-word;
+    }
+
+    /* Bottom Right Developer Badge */
+    .developer-tag {
+      position: fixed;
+      bottom: 16px;
+      right: 16px;
+      font-size: 12px;
+      color: #6b7280;
+      font-weight: 500;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- 1. Login Card -->
+    <div id="loginCard" class="login-card">
+      <h1 class="title">Hi, Welcome back!</h1>
+      <form id="loginForm" onsubmit="handleLogin(event)">
+        <div class="form-group">
+          <input type="text" class="input-field" placeholder="Username or Email Address" required />
+        </div>
+        <div class="form-group">
+          <input type="password" class="input-field" placeholder="Password" required />
+        </div>
+
+        <div class="form-options">
+          <label class="checkbox-label">
+            <input type="checkbox" checked /> Keep me signed in
+          </label>
+          <a href="#" class="forgot-link">Forgot Password?</a>
+        </div>
+
+        <button type="submit" class="submit-btn">Sign In</button>
+      </form>
+    </div>
+
+    <!-- 2. Loading Screen -->
+    <div id="loaderScreen" class="loader-screen">
+      <div class="spinner"></div>
+    </div>
+
+    <!-- 3. Success Screen -->
+    <div id="successScreen" class="success-screen">
+      <h1 class="big-text">pari 😂</h1>
+    </div>
+  </div>
+
+  <!-- Developer Tag in Corner -->
+  <div class="developer-tag">
+    developer by Vishnu N Raj
+  </div>
+
+  <script>
+    function handleLogin(event) {
+      event.preventDefault();
+
+      const loginCard = document.getElementById('loginCard');
+      const loaderScreen = document.getElementById('loaderScreen');
+      const successScreen = document.getElementById('successScreen');
+
+      // Hide login form & show loader
+      loginCard.style.display = 'none';
+      loaderScreen.style.display = 'flex';
+
+      // Simulate loading delay (2 seconds) then show text
+      setTimeout(() => {
+        loaderScreen.style.display = 'none';
+        successScreen.style.display = 'block';
+      }, 2000);
+    }
+  </script>
+
+</body>
+</html>
