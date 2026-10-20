@@ -1,0 +1,1839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weblyzo - Shopify Snippet Library</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- Navigation Header -->
+    <header class="bg-blue-900 text-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <span class="text-xl font-bold bg-white text-blue-900 px-2.5 py-1 rounded">W</span>
+                <span class="text-xl font-bold">Weblyzo.</span>
+            </div>
+            <nav class="flex space-x-6 text-sm font-medium">
+                <a href="#home" class="hover:underline flex items-center"><span class="mr-1">🏠</span> Home</a>
+                <a href="tutorials.html" class="hover:underline flex items-center"><span class="mr-1">📚</span> Tutorials</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-4xl mx-auto px-4 py-8" id="home">
+        
+        <!-- Hero Header -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
+            <div class="inline-flex items-center space-x-1 bg-blue-50 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">
+                <span>⚡</span>
+                <span>Free Shopify Resources</span>
+            </div>
+            <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Shopify Snippet Library / Liquid Code Snippets</h1>
+            <p class="text-gray-600 text-sm mb-6">
+                Explore our curated library of 61 ready-to-use Liquid code snippets tailored for Shopify store customization. Easily copy, paste, and enhance your custom theme sections.
+            </p>
+
+            <!-- Search Field -->
+            <div class="space-y-3">
+                <div class="relative">
+                    <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">🔍</span>
+                    <input type="text" id="searchInput" onkeyup="filterSnippets()" placeholder="Search snippets by title or code..." class="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent">
+                </div>
+                <div class="flex justify-between items-center text-sm">
+                    <button onclick="resetSearch()" class="text-blue-600 hover:underline flex items-center text-xs font-medium">
+                        <span class="mr-1">🔄</span> Reset
+                    </button>
+                    <span id="snippetCount" class="text-gray-500 text-xs">Showing 61 of 61 code snippets</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Etsy Store Promotion Banner -->
+        <div class="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-6 text-center">
+            <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-amber-800 text-xs md:text-sm font-semibold hover:underline flex items-center justify-center">
+                <span class="mr-1.5">🎁</span> Need Premium Shopify Themes? Visit Our Etsy Shop
+            </a>
+        </div>
+
+        <!-- Snippets List Area (Contains Cards 1 through 61) -->
+        <div class="space-y-6" id="snippets-container">
+
+            <!-- CODE BLOCK 1 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #1</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 1</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 1 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 1 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 2 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #2</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 2</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 2 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 2 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 3 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #3</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 3</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 3 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 3 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 4 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #4</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 4</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 4 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 4 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 5 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #5</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 5</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 5 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 5 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 6 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #6</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 6</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 6 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 6 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 7 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #7</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 7</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 7 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 7 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 8 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #8</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 8</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 8 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 8 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 9 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #9</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 9</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 9 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 9 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 10 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #10</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 10</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 10 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 10 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 11 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #11</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 11</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 11 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 11 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 12 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #12</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 12</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 12 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 12 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 13 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #13</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 13</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 13 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 13 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 14 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #14</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 14</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 14 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 14 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 15 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #15</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 15</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 15 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 15 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 16 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #16</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 16</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 16 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 16 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 17 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #17</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 17</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 17 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 17 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 18 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #18</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 18</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 18 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 18 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 19 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #19</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 19</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 19 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 19 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 20 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #20</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 20</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 20 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 20 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 21 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #21</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 21</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 21 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 21 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 22 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #22</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 22</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 22 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 22 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 23 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #23</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 23</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 23 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 23 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 24 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #24</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 24</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 24 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 24 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 25 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #25</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 25</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 25 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 25 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 26 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #26</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 26</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 26 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 26 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 27 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #27</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 27</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 27 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 27 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 28 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #28</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 28</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 28 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 28 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 29 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #29</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 29</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 29 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 29 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 30 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #30</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 30</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 30 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 30 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 31 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #31</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 31</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 31 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 31 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 32 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #32</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 32</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 32 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 32 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 33 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #33</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 33</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 33 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 33 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 34 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #34</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 34</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 34 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 34 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 35 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #35</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 35</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 35 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 35 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 36 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #36</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 36</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 36 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 36 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 37 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #37</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 37</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 37 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 37 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 38 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #38</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 38</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 38 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 38 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 39 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #39</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 39</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 39 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 39 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 40 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #40</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 40</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 40 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 40 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 41 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #41</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 41</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 41 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 41 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 42 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #42</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 42</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 42 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 42 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 43 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #43</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 43</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 43 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 43 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 44 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #44</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 44</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 44 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 44 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 45 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #45</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 45</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 45 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 45 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 46 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #46</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 46</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 46 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 46 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 47 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #47</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 47</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 47 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 47 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 48 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #48</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 48</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 48 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 48 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 49 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #49</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 49</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 49 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 49 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 50 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #50</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 50</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 50 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 50 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 51 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #51</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 51</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 51 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 51 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 52 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #52</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 52</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 52 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 52 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 53 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #53</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 53</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 53 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 53 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 54 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #54</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 54</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 54 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 54 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 55 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #55</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 55</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 55 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 55 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 56 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #56</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 56</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 56 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 56 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 57 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #57</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 57</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 57 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 57 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 58 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #58</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 58</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 58 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 58 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 59 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #59</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 59</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 59 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 59 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 60 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #60</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 60</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 60 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 60 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- CODE BLOCK 61 -->
+            <div class="snippet-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/50">
+                    <div>
+                        <span class="text-xs font-bold tracking-wider text-blue-600 uppercase">Code #61</span>
+                        <h3 class="snippet-title text-base font-semibold text-gray-900">Add your Heading 61</h3>
+                    </div>
+                    <button onclick="copyCode(this)" class="bg-blue-50 text-blue-700 hover:bg-blue-100 text-xs font-medium px-3 py-1.5 rounded-lg flex items-center transition-colors">
+                        <span class="mr-1">📋</span> Copy
+                    </button>
+                </div>
+                <div class="p-4 bg-white border-b border-gray-100">
+                    <div class="w-full bg-blue-50 text-blue-800 text-center py-2 text-xs font-medium rounded border border-blue-200">
+                        Add your Web Demo 61 Here
+                    </div>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-4 font-mono text-xs overflow-x-auto">
+                    <pre><code>Add your Liquid Code 61 Here</code></pre>
+                </div>
+                <div class="px-5 py-3 bg-gray-50 flex justify-between items-center text-xs text-gray-600 border-t border-gray-100">
+                    <span class="flex items-center text-emerald-600 font-medium">
+                        <span class="w-2 h-2 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span> Liquid Ready
+                    </span>
+                    <a href="https://www.etsy.com/shop/YourEtsyStore" target="_blank" class="text-blue-600 font-semibold hover:underline">
+                        More Themes? Visit Our Shop &rarr;
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

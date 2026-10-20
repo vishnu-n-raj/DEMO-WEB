@@ -1,0 +1,11 @@
+/* Custom Code Styles for Weblyzo Library */
+
+pre code {
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+/* Smooth transitions for search filtering */
+.snippet-card {
+    transition: all 0.2s ease-in-out;
+}
